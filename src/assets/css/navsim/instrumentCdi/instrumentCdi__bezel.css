@@ -1,0 +1,7 @@
+.instrumentCdi__bezel {
+    width: 212px;
+    height: 212px;
+    top: 14px;
+    left: 14px;
+    background: url('/assets/images/navsim/bezelRound.png') 0 0 no-repeat;
+}

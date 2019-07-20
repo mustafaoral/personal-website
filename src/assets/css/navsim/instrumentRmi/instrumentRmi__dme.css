@@ -1,0 +1,38 @@
+.instrumentRmi__dme {
+    width: 10px;
+    height: 14px;
+    top: 30px;
+    overflow: hidden;
+}
+
+.instrumentRmi__dme_left1 {
+    left: 52px;
+}
+
+.instrumentRmi__dme_left2 {
+    left: 64px;
+}
+
+.instrumentRmi__dme_left3 {
+    left: 76px;
+}
+
+.instrumentRmi__dme_left4 {
+    left: 89px;
+}
+
+.instrumentRmi__dme_right1 {
+    right: 89px;
+}
+
+.instrumentRmi__dme_right2 {
+    right: 76px;
+}
+
+.instrumentRmi__dme_right3 {
+    right: 64px;
+}
+
+.instrumentRmi__dme_right4 {
+    right: 52px;
+}

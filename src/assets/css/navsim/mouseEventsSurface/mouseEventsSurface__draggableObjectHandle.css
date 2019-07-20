@@ -1,0 +1,10 @@
+.mouseEventsSurface__draggableObjectHandle {
+    position: absolute;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.mouseEventsSurface__draggableObjectHandle_hidden {
+    display: none;
+}

@@ -1,0 +1,9 @@
+.informationDisplay__pause {
+    height: 30px;
+    line-height: 30px;
+    color: red;
+    margin-left: 1em;
+    float: right;
+    background-color: rgba(0,0,0,0.5);
+    padding: 0 1em;
+}

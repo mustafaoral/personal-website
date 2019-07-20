@@ -1,0 +1,11 @@
+.instrumentKnob__graphic_hdg {
+    background: url('/assets/images/navsim/instrumentKnob/instrumentKnobHdg.png') 0 0 no-repeat;
+}
+
+.instrumentKnob__graphic_crs {
+    background: url('/assets/images/navsim/instrumentKnob/instrumentKnobCrs.png') 0 0 no-repeat;
+}
+
+.instrumentKnob__graphic_obs {
+    background: url('/assets/images/navsim/instrumentKnob/instrumentKnobObs.png') 0 0 no-repeat;
+}

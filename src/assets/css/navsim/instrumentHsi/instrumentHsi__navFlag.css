@@ -1,0 +1,14 @@
+.instrumentHsi__navFlag {
+    width: 50px;
+    height: 100px;
+    top: 78px;
+    left: 14px;
+    background: url('/assets/images/navsim/navFlags.png') 0 0 no-repeat;
+    transform: rotate(-30deg);
+    transition: transform 0.2s;
+    transition-timing-function: linear;
+}
+
+.instrumentHsi__navFlag_visible {
+    transform: rotate(0);
+}

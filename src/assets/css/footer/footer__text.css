@@ -1,0 +1,11 @@
+.footer__text {
+    margin: 0;
+    font-weight: 600;
+    display: block;
+}
+
+@media (min-width: 400px) {
+    .footer__text {
+        display: inline;
+    }
+}

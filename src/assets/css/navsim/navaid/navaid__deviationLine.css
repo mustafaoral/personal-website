@@ -1,0 +1,23 @@
+.navaid__deviationLine {
+    stroke-width: 1;
+}
+
+.navaid__deviationLine_yellow {
+    stroke: #A68D11;
+}
+
+.navaid__deviationLine_green {
+    stroke: #77B259;
+}
+
+.navaid__deviationLine_grey {
+    stroke: #444;
+}
+
+.navaid__deviationLine_index_0 {
+    transform: rotate(-10deg);
+}
+
+.navaid__deviationLine_index_2 {
+    transform: rotate(10deg);
+}

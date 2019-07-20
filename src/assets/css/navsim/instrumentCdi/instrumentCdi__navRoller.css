@@ -1,0 +1,13 @@
+.instrumentCdi__navRoller {
+    width: 37px;
+    height: 16px;
+    top: 15px;
+    left: 0;
+    background: url('/assets/images/navsim/cdi/cdiNav.png') 0 0 no-repeat;
+    transition: top 0.1s;
+    transition-timing-function: linear;
+}
+
+.instrumentCdi__navRoller_visible {
+    top: 0;
+}

@@ -1,0 +1,4 @@
+.instrumentKnob__handle {
+    cursor: pointer;
+    user-select: none;
+}

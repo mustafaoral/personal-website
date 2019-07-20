@@ -1,0 +1,563 @@
+---
+layout: layout.njk
+title: NavSim 6000 Demo
+permalink: /projects/navsim/demo/index.html
+additionalPageClass: page_mode_navsim
+---
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+
+{% if config.environment == "development" %}
+<link rel="stylesheet" href="/assets/css/navsim/aircraftCourseToNavaid/aircraftCourseToNavaid__line.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/aircraftTrace/aircraftTrace__traceLines.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/debugInformation/debugInformation.css" />
+<link rel="stylesheet" href="/assets/css/navsim/debugInformation/debugInformation__line.css" />
+<link rel="stylesheet" href="/assets/css/navsim/debugInformation/debugInformation__text.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/informationDisplay/informationDisplay.css" />
+<link rel="stylesheet" href="/assets/css/navsim/informationDisplay/informationDisplay__pause.css" />
+<link rel="stylesheet" href="/assets/css/navsim/informationDisplay/informationDisplay__simRate.css" />
+<link rel="stylesheet" href="/assets/css/navsim/informationDisplay/informationDisplay__wind.css" />
+<link rel="stylesheet" href="/assets/css/navsim/informationDisplay/informationDisplay__windArrowGraphic.css" />
+<link rel="stylesheet" href="/assets/css/navsim/informationDisplay/informationDisplay__windInstructions.css" />
+<link rel="stylesheet" href="/assets/css/navsim/informationDisplay/informationDisplay__windValue.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/instrumentAsi/instrumentAsi.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentAsi/instrumentAsi__bezel.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentAsi/instrumentAsi__inner.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentAsi/instrumentAsi__needle.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi__base.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi__bezel.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi__rollerShading.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi__navCutout.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi__navRoller.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi__needle.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi__needleElement.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi__obsKnob.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi__obsKnobShadow.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi__ring.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi__toFromCutout.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentCdi/instrumentCdi__toFromRoller.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__aircraft.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__base.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__bezel.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__crs.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__crsElement.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__crsKnob.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__crsKnobShadow.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__digit.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__hdgBug.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__hdgBugElement.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__hdgKnob.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__hdgKnobShadow.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__inner.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__navFlag.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__outer.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__ring.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__rollerShading.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentHsi/instrumentHsi__toFrom.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/instrumentKnob/instrumentKnob.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentKnob/instrumentKnob__graphic.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentKnob/instrumentKnob__graphicBase.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentKnob/instrumentKnob__handle.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/instrumentKnobShadow/instrumentKnobShadow.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/instrumentPanel/instrumentPanel.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentPanel/instrumentPanel__instrument.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__barberPole.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__barberPoles.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__base.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__bezel.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__dme.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__dmeRollerShading.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__inner.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__navFlag.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__needle.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__needleCover.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__needleGroup.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__outer.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmi/instrumentRmi__selector.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmiSelector/instrumentRmiSelector.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmiSelector/instrumentRmiSelector__graphic.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentRmiSelector/instrumentRmiSelector__handle.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/instrumentTc/instrumentTc.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentTc/instrumentTc__aircraft.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentTc/instrumentTc__bezel.css" />
+<link rel="stylesheet" href="/assets/css/navsim/instrumentTc/instrumentTc__inner.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/map/map.css" />
+<link rel="stylesheet" href="/assets/css/navsim/map/map__layer.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/mouseEventsSurface/mouseEventsSurface__draggableObjectHandle.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/movingMap/movingMap.css" />
+<link rel="stylesheet" href="/assets/css/navsim/movingMap/movingMap__aircraft.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/navaid/navaid__deviationAndObs.css" />
+<link rel="stylesheet" href="/assets/css/navsim/navaid/navaid__deviationLine.css" />
+<link rel="stylesheet" href="/assets/css/navsim/navaid/navaid__deviationLineHorizontal.css" />
+<link rel="stylesheet" href="/assets/css/navsim/navaid/navaid__graphics.css" />
+<link rel="stylesheet" href="/assets/css/navsim/navaid/navaid__obsArrow.css" />
+<link rel="stylesheet" href="/assets/css/navsim/navaid/navaid__option.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/ndb/ndb__center.css" />
+<link rel="stylesheet" href="/assets/css/navsim/ndb/ndb__circle.css" />
+<link rel="stylesheet" href="/assets/css/navsim/ndb/ndb__dot.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/screw/screw.css" />
+<link rel="stylesheet" href="/assets/css/navsim/screw/screw__background.css" />
+<link rel="stylesheet" href="/assets/css/navsim/screw/screw__slot.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/userWind/userWind.css" />
+<link rel="stylesheet" href="/assets/css/navsim/userWind/userWind__arrowTip.css" />
+<link rel="stylesheet" href="/assets/css/navsim/userWind/userWind__graphic.css" />
+<link rel="stylesheet" href="/assets/css/navsim/userWind/userWind__line.css" />
+<link rel="stylesheet" href="/assets/css/navsim/userWind/userWind__value.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/vor/vor__center.css" />
+<link rel="stylesheet" href="/assets/css/navsim/vor/vor__hexagon.css" />
+
+<link rel="stylesheet" href="/assets/css/navsim/vordme/vordme__center.css" />
+<link rel="stylesheet" href="/assets/css/navsim/vordme/vordme__hexagon.css" />
+<link rel="stylesheet" href="/assets/css/navsim/vordme/vordme__rectangle.css" />
+
+{% else %}
+<link rel="stylesheet" href="/assets/css/navsim.min.css" />
+{% endif %}
+
+<article class="article">
+  <h2 class="article__title">Navsim 6000 Demo</h2>
+  <div class="navsim">
+    <div class="map">
+      <svg class="map__layer aircraftCourseToNavaid">
+        <g>
+          <line class="aircraftCourseToNavaid__line aircraftCourseToNavaid__line_navaid1 aircraftCourseToNavaid__line_hidden" x1="40" y1="15" x2="40" y2="65" />
+          <line class="aircraftCourseToNavaid__line aircraftCourseToNavaid__line_navaid2 aircraftCourseToNavaid__line_hidden" x1="45" y1="15" x2="40" y2="65" />
+        </g>
+      </svg>
+      <svg class="map__layer movingMap">
+        <g class="movingMap__navaid movingMap__navaid_number_1 navaid">
+          <g class="navaid__graphics">
+            <g class="navaid__deviationAndObs navaid__deviationAndObs_hidden">
+              <line class="navaid__deviationLine navaid__deviationLine_yellow navaid__deviationLine_index_0" x1="0" x2="0" y1="-10000" y2="10000" />
+              <line class="navaid__deviationLine navaid__deviationLine_yellow navaid__deviationLine_index_1" x1="0" x2="0" y1="-10000" y2="10000" />
+              <line class="navaid__deviationLine navaid__deviationLine_yellow navaid__deviationLine_index_2" x1="0" x2="0" y1="-10000" y2="10000" />
+              <line class="navaid__deviationLine navaid__deviationLine_grey navaid__deviationLineHorizontal_index_0" x1="0" x2="0" y1="-10000" y2="10000" />
+              <line class="navaid__deviationLine navaid__deviationLine_grey navaid__deviationLineHorizontal_index_1" x1="0" x2="0" y1="-10000" y2="10000" />
+              <path class="navaid__obsArrow" d="m 0,-50 7,15 -3,0 0,12 -8,0 0,-12 -3,0 z" />
+            </g>
+            <g class="navaid__option navaid__option_vor vor">
+              <path class="vor__hexagon" d="M -12,0 -6,10.392 6,10.392 12,0 6,-10.392 -6,-10.392 z" />
+              <circle class="vor__center" cx="0" cy="0" r="1.5" />
+            </g>
+            <g class="navaid__option vordme">
+              <rect class="vordme__rectangle" x="-12" y="-10.392" width="24" height="20.785" />
+              <path class="vordme__hexagon" d="M -12,0 -6,10.392 6,10.392 12,0 6,-10.392 -6,-10.392 z" />
+              <circle class="vordme__center" cx="0" cy="0" r="1.5" />
+            </g>
+            <g class="navaid__option ndb">
+              <circle class="ndb__center" cx="0" cy="0" r="2" />
+              <circle class="ndb__circle" cx="0" cy="0" r="10" />
+              <circle class='ndb__dot' cx='0' cy='0' r='15' stroke-dasharray='0.001, 5.236' />
+              <circle class='ndb__dot' cx='0' cy='0' r='20' stroke-dasharray='0.001, 5.236' />
+              <circle class='ndb__dot' cx='0' cy='0' r='25' stroke-dasharray='0.001, 5.236' />
+              <circle class='ndb__dot' cx='0' cy='0' r='30' stroke-dasharray='0.001, 5.236' />
+              <circle class='ndb__dot' cx='0' cy='0' r='35' stroke-dasharray='0.001, 5.236' />
+              <circle class='ndb__dot' cx='0' cy='0' r='40' stroke-dasharray='0.001, 5.236' />
+            </g>
+          </g>
+        </g>
+        <g class="movingMap__navaid movingMap__navaid_number_2 navaid">
+          <g class="navaid__graphics">
+            <g class="navaid__deviationAndObs navaid__deviationAndObs_hidden">
+              <line class="navaid__deviationLine navaid__deviationLine_green navaid__deviationLine_index_0" x1="0" x2="0" y1="-10000" y2="10000" />
+              <line class="navaid__deviationLine navaid__deviationLine_green navaid__deviationLine_index_1" x1="0" x2="0" y1="-10000" y2="10000" />
+              <line class="navaid__deviationLine navaid__deviationLine_green navaid__deviationLine_index_2" x1="0" x2="0" y1="-10000" y2="10000" />
+              <line class="navaid__deviationLine navaid__deviationLine_grey navaid__deviationLineHorizontal_index_0" x1="0" x2="0" y1="-10000" y2="10000" />
+              <line class="navaid__deviationLine navaid__deviationLine_grey navaid__deviationLineHorizontal_index_1" x1="0" x2="0" y1="-10000" y2="10000" />
+              <path class="navaid__obsArrow" d="m 0,-50 7,15 -3,0 0,12 -8,0 0,-12 -3,0 z" />
+            </g>
+            <g class="navaid__option vor">
+              <path class="vor__hexagon" d="M -12,0 -6,10.392 6,10.392 12,0 6,-10.392 -6,-10.392 z" />
+              <circle class="vor__center" cx="0" cy="0" r="1.5" />
+            </g>
+            <g class="navaid__option vordme">
+              <rect class="vordme__rectangle" x="-12" y="-10.392" width="24" height="20.785" />
+              <path class="vordme__hexagon" d="M -12,0 -6,10.392 6,10.392 12,0 6,-10.392 -6,-10.392 z" />
+              <circle class="vordme__center" cx="0" cy="0" r="1.5" />
+            </g>
+            <g class="navaid__option ndb">
+              <circle class="ndb__center" cx="0" cy="0" r="2" />
+              <circle class="ndb__circle" cx="0" cy="0" r="10" />
+              <circle class='ndb__dot' cx='0' cy='0' r='15' stroke-dasharray='0.001, 5.236' />
+              <circle class='ndb__dot' cx='0' cy='0' r='20' stroke-dasharray='0.001, 5.236' />
+              <circle class='ndb__dot' cx='0' cy='0' r='25' stroke-dasharray='0.001, 5.236' />
+              <circle class='ndb__dot' cx='0' cy='0' r='30' stroke-dasharray='0.001, 5.236' />
+              <circle class='ndb__dot' cx='0' cy='0' r='35' stroke-dasharray='0.001, 5.236' />
+              <circle class='ndb__dot' cx='0' cy='0' r='40' stroke-dasharray='0.001, 5.236' />
+            </g>
+          </g>
+        </g>
+        <svg class="map__layer aircraftTrace">
+          <g>
+            <polyline class="aircraftTrace__traceLines" points="0,0" />
+          </g>
+        </svg>
+        <g class="movingMap__aircraft">
+          <line x1="0" y1="-13" x2="0" y2="25" />
+          <line x1="-17" y1="0" x2="17" y2="0" />
+          <line x1="-5" y1="20" x2="5" y2="20" />
+        </g>
+      </svg>
+      <div class="map__layer informationDisplay">
+        <div class="informationDisplay__windInstructions">
+          Click and drag to set the wind, click and release to clear. Wind is indicated in METAR format.
+        </div>
+        <div class="informationDisplay__userWind"></div>
+        <div class="informationDisplay__pause">
+          Paused
+        </div>
+        <div class="informationDisplay__simRate">
+          <div>Simulation Rate: <span class="informationDisplay__simRateValue"></span>x</div>
+        </div>
+        <div class="informationDisplay__wind">
+          <div class="informationDisplay__windValue">27107KT</div>
+          <svg class="informationDisplay__windArrow" viewBox="0 0 80 80">
+            <g class="informationDisplay__windArrowGraphic">
+              <line x1="40" y1="15" x2="40" y2="65" />
+              <path d="M 40,15 43,25 37,25 z" />
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="map__layer debugInformation">
+        <div class="debugInformation__text">
+          <div class="debugInformation__line">Aircraft X : <span class="debugInformation__aircraftPositionX"></span></div>
+          <div class="debugInformation__line">Aircraft Y : <span class="debugInformation__aircraftPositionY"></span></div>
+          <div class="debugInformation__line">Aircraft IAS: <span class="debugInformation__aircraftAirspeed"></span> KTS</div>
+          <div class="debugInformation__line">Aircraft HDG: <span class="debugInformation__aircraftHeading"></span></div>
+          <div class="debugInformation__line">Aircraft TR : <span class="debugInformation__aircraftTurnRate"></span> DEG/S</div>
+          <br />
+          <div class="debugInformation__line">Navaid 1 CRS: <span class="debugInformation__navaid1Crs"></span></div>
+          <div class="debugInformation__line">Navaid 2 CRS: <span class="debugInformation__navaid2Crs"></span></div>
+          <br />
+          <div class="debugInformation__line">Navaid 1 X : <span class="debugInformation__navaid1X"></span></div>
+          <div class="debugInformation__line">Navaid 1 Y : <span class="debugInformation__navaid1Y"></span></div>
+          <br />
+          <div class="debugInformation__line">Navaid 2 X : <span class="debugInformation__navaid2X"></span></div>
+          <div class="debugInformation__line">Navaid 2 Y : <span class="debugInformation__navaid2Y"></span></div>
+        </div>
+      </div>
+      <div class="map__layer userWind">
+        <svg class="userWind__graphic">
+          <g>
+            <line class="userWind__line" x1="0" y1="0" x2="0" y2="0" />
+          </g>
+          <g class="userWind__arrowTip">
+            <path d="M 0,-2 5,13 -5,13 z" />
+          </g>
+        </svg>
+      </div>
+      <div class="map__layer mouseEventsSurface">
+        <div data-handle-for="navaid1" class="mouseEventsSurface__draggableObjectHandle"></div>
+        <div data-handle-for="navaid2" class="mouseEventsSurface__draggableObjectHandle"></div>
+        <div data-handle-for="aircraft" class="mouseEventsSurface__draggableObjectHandle"></div>
+      </div>
+    </div>
+
+    <div class="instrumentPanel">
+      <div class="instrumentPanel__instrument instrumentPanel__instrument_index_0 instrumentAsi">
+        <div>
+          <svg class="screw screw_position_topLeft">
+            <g class="screw__background">
+              <circle cx="15" cy="15" r="8" />
+            </g>
+            <g>
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+            </g>
+          </svg>
+          <svg class="screw screw_position_topRight">
+            <g class="screw__background">
+              <circle cx="15" cy="15" r="8" />
+            </g>
+            <g>
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+            </g>
+          </svg>
+          <svg class="screw screw_position_bottomRight">
+            <g class="screw__background">
+              <circle cx="15" cy="15" r="8" />
+            </g>
+            <g>
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+            </g>
+          </svg>
+          <svg class="screw screw_position_bottomLeft">
+            <g class="screw__background">
+              <circle cx="15" cy="15" r="8" />
+            </g>
+            <g>
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+            </g>
+          </svg>
+        </div>
+        <div class="instrumentAsi__inner"></div>
+        <div class="instrumentAsi__needle"></div>
+        <div class="instrumentAsi__bezel"></div>
+      </div>
+
+      <div class="instrumentPanel__instrument instrumentPanel__instrument_index_1 instrumentTc">
+        <div>
+          <svg class="screw screw_position_topLeft">
+            <g class="screw__background">
+              <circle cx="15" cy="15" r="8" />
+            </g>
+            <g>
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+            </g>
+          </svg>
+          <svg class="screw screw_position_topRight">
+            <g class="screw__background">
+              <circle cx="15" cy="15" r="8" />
+            </g>
+            <g>
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+            </g>
+          </svg>
+          <svg class="screw screw_position_bottomRight">
+            <g class="screw__background">
+              <circle cx="15" cy="15" r="8" />
+            </g>
+            <g>
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+            </g>
+          </svg>
+          <svg class="screw screw_position_bottomLeft">
+            <g class="screw__background">
+              <circle cx="15" cy="15" r="8" />
+            </g>
+            <g>
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+            </g>
+          </svg>
+        </div>
+        <div class="instrumentTc__inner"></div>
+        <div class="instrumentTc__aircraft"></div>
+        <div class="instrumentTc__bezel"></div>
+      </div>
+
+      <div class="instrumentPanel__instrument instrumentPanel__instrument_index_2 instrumentHsi">
+        <div class="instrumentHsi__crsKnobShadow instrumentKnobShadow"></div>
+        <div class="instrumentHsi__hdgKnobShadow instrumentKnobShadow"></div>
+        <div class="instrumentHsi__base"></div>
+        <div class="instrumentHsi__ring"></div>
+        <div class="instrumentHsi__inner">
+          <div class="instrumentHsi__toFrom instrumentHsi__toFrom_to"></div>
+          <div class="instrumentHsi__toFrom instrumentHsi__toFrom_from"></div>
+          <div class="instrumentHsi__rollerShading"></div>
+        </div>
+        <div class="instrumentHsi__navFlag"></div>
+        <div class="instrumentHsi__outer"></div>
+
+        <svg class="instrumentHsi__crs" width='140' height='140' viewBox='0 0 140 140'>
+          <g>
+            <path class="instrumentHsi__crsElement" d="m 69,31 0,-6 -3,0 4,-10 4,10 -3,0 0,6 z" />
+            <path class="instrumentHsi__crsElement" d="m 69,109 2,0 0,21 -1,5 -1,-5 z" />
+            <path class="instrumentHsi__crsElement instrumentHsi__crsElement_needle" d="m 69,34 2,0 0,72 -2,0 z" />
+          </g>
+        </svg>
+
+        <svg class="instrumentHsi__hdgBug" width='160' height='160' viewBox='0 0 160 160'>
+          <g>
+            <path class="instrumentHsi__hdgBugElement" d="m 73,6 14,0 0,2 -4,1.5 -3,3, -3,-3 -4,-1.5 z" />
+          </g>
+        </svg>
+
+        <div class="instrumentHsi__digit instrumentHsi__digit_crs1"></div>
+        <div class="instrumentHsi__digit instrumentHsi__digit_crs2"></div>
+        <div class="instrumentHsi__digit instrumentHsi__digit_crs3"></div>
+
+        <div class="instrumentHsi__digit instrumentHsi__digit_hdg1"></div>
+        <div class="instrumentHsi__digit instrumentHsi__digit_hdg2"></div>
+        <div class="instrumentHsi__digit instrumentHsi__digit_hdg3"></div>
+
+        <div class="instrumentHsi__bezel">
+          <svg class="instrumentHsi__aircraft">
+            <g>
+              <line x1="20" y1="1" x2="20" y2="39" />
+              <line x1="3" y1="14" x2="37" y2="14" />
+              <line x1="15" y1="34" x2="25" y2="34" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="instrumentHsi__crsKnob instrumentKnob">
+          <div class="instrumentKnob__graphic">
+            <div class="instrumentKnob__graphicBase"></div>
+            <div class="instrumentKnob__graphic_crs"></div>
+          </div>
+          <div class="instrumentKnob__handle"></div>
+        </div>
+
+        <div class="instrumentHsi__hdgKnob instrumentKnob">
+          <div class="instrumentKnob__graphic">
+            <div class="instrumentKnob__graphicBase"></div>
+            <div class="instrumentKnob__graphic_hdg"></div>
+          </div>
+          <div class="instrumentKnob__handle"></div>
+        </div>
+      </div>
+
+      <div class="instrumentPanel__instrument instrumentPanel__instrument_index_3 instrumentCdi">
+        <div>
+          <svg class="screw screw_position_topLeft">
+            <g class="screw__background">
+              <circle cx="15" cy="15" r="8" />
+            </g>
+            <g>
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+            </g>
+          </svg>
+          <svg class="screw screw_position_topRight">
+            <g class="screw__background">
+              <circle cx="15" cy="15" r="8" />
+            </g>
+            <g>
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+            </g>
+          </svg>
+          <svg class="screw screw_position_bottomLeft">
+            <g class="screw__background">
+              <circle cx="15" cy="15" r="8" />
+            </g>
+            <g>
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+              <rect class="screw__slot" x="10" y="14" width="10" height="2" />
+            </g>
+          </svg>
+        </div>
+        <div class="instrumentCdi__obsKnobShadow instrumentKnobShadow"></div>
+        <div class="instrumentCdi__base"></div>
+        <div class="instrumentCdi__ring"></div>
+        <div class="instrumentCdi__navCutout">
+          <div class="instrumentCdi__navRoller"></div>
+        </div>
+        <div class="instrumentCdi__toFromCutout">
+          <div class="instrumentCdi__toFromRoller"></div>
+        </div>
+        <div class="instrumentCdi__rollerShading"></div>
+        <svg class="instrumentCdi__needle" width='100' height='100' viewBox='0 0 100 100'>
+          <g>
+            <path class="instrumentCdi__needleElement" d="m 49,10 2,0 0,80 -2,0 z" />
+          </g>
+        </svg>
+        <div class="instrumentCdi__bezel"></div>
+        <div class="instrumentCdi__obsKnob instrumentKnob">
+          <div class="instrumentKnob__graphic">
+            <div class="instrumentKnob__graphicBase"></div>
+            <div class="instrumentKnob__graphic_obs"></div>
+          </div>
+          <div class="instrumentKnob__handle"></div>
+        </div>
+      </div>
+
+      <div class="instrumentPanel__instrument instrumentPanel__instrument_index_4 instrumentRmi">
+        <div class="instrumentRmi__base"></div>
+        <div class="instrumentRmi__inner"></div>
+        <div class="instrumentRmi__navFlag instrumentRmi__navFlag_left"></div>
+        <div class="instrumentRmi__navFlag instrumentRmi__navFlag_right"></div>
+        <div class="instrumentRmi__dme instrumentRmi__dme_left1">
+          <img class="instrumentRmi__dmeDigit" src="/assets/images/navsim/rmi/rmiDmeDigits.png" alt="dme digit L1" />
+        </div>
+        <div class="instrumentRmi__dme instrumentRmi__dme_left2">
+          <img class="instrumentRmi__dmeDigit" src="/assets/images/navsim/rmi/rmiDmeDigits.png" alt="dme digit L2" />
+        </div>
+        <div class="instrumentRmi__dme instrumentRmi__dme_left3">
+          <img class="instrumentRmi__dmeDigit" src="/assets/images/navsim/rmi/rmiDmeDigits.png" alt="dme digit L3" />
+        </div>
+        <div class="instrumentRmi__dme instrumentRmi__dme_left4">
+          <img class="instrumentRmi__dmeDigit" src="/assets/images/navsim/rmi/rmiDmeDigits.png" alt="dme digit L4" />
+        </div>
+        <div class="instrumentRmi__dme instrumentRmi__dme_right1">
+          <img class="instrumentRmi__dmeDigit" src="/assets/images/navsim/rmi/rmiDmeDigits.png" alt="dme digit R1" />
+        </div>
+        <div class="instrumentRmi__dme instrumentRmi__dme_right2">
+          <img class="instrumentRmi__dmeDigit" src="/assets/images/navsim/rmi/rmiDmeDigits.png" alt="dme digit R2" />
+        </div>
+        <div class="instrumentRmi__dme instrumentRmi__dme_right3">
+          <img class="instrumentRmi__dmeDigit" src="/assets/images/navsim/rmi/rmiDmeDigits.png" alt="dme digit R3" />
+        </div>
+        <div class="instrumentRmi__dme instrumentRmi__dme_right4">
+          <img class="instrumentRmi__dmeDigit" src="/assets/images/navsim/rmi/rmiDmeDigits.png" alt="dme digit R4" />
+        </div>
+        <div class="instrumentRmi__dmeRollerShading"></div>
+        <div class="instrumentRmi__barberPoles">
+          <div class="instrumentRmi__barberPole instrumentRmi__barberPole_left"></div>
+          <div class="instrumentRmi__barberPole instrumentRmi__barberPole_right"></div>
+        </div>
+        <div class="instrumentRmi__outer"></div>
+
+        <svg class="instrumentRmi__needleGroup instrumentRmi__needleGroup_navaid2" width="120" height="120" viewBox="0 0 120 120">
+          <g>
+            <path class="instrumentRmi__needle_navaid2" d="m 60,6 7,15 -3,0 0,85 -4,8 -4,-8 0,-85 -3,0 z m -2,15 0,85 4,0 0,-85 z" />
+            <circle class="instrumentRmi__needleCover_navaid2" cx="60" cy="60" r="10" />
+          </g>
+        </svg>
+
+        <svg class="instrumentRmi__needleGroup instrumentRmi__needleGroup_navaid1" width="120" height="120" viewBox="0 0 120 120">
+          <g>
+            <path class="instrumentRmi__needle_navaid1" d="m 60,6 4,15 -2,0 0,75 -2,18 -2,-18 0,-75 -2,0 z" />
+            <circle class="instrumentRmi__needleCover_navaid1" cx="60" cy="60" r="4" />
+          </g>
+        </svg>
+
+        <div class="instrumentRmi__bezel"></div>
+
+        <div class="instrumentRmi__selector instrumentRmi__selector_left instrumentRmiSelector">
+          <div class="instrumentRmiSelector__graphic instrumentRmiSelector__graphic_left"></div>
+          <div class="instrumentRmiSelector__handle instrumentRmiSelector__handle_left"></div>
+        </div>
+
+        <div class="instrumentRmi__selector instrumentRmi__selector_right instrumentRmiSelector">
+          <div class="instrumentRmiSelector__graphic instrumentRmiSelector__graphic_right"></div>
+          <div class="instrumentRmiSelector__handle instrumentRmiSelector__handle_right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if config.environment == "development" %}
+  <script src="/assets/scripts/navsim/ctor/aircraft.js"></script>
+  <script src="/assets/scripts/navsim/ctor/asi.js"></script>
+  <script src="/assets/scripts/navsim/ctor/cdi.js"></script>
+  <script src="/assets/scripts/navsim/ctor/hsi.js"></script>
+  <script src="/assets/scripts/navsim/ctor/navaid.js"></script>
+  <script src="/assets/scripts/navsim/ctor/rmi.js"></script>
+  <script src="/assets/scripts/navsim/ctor/tc.js"></script>
+  <script src="/assets/scripts/navsim/debugInformation.js"></script>
+  <script src="/assets/scripts/navsim/navsim.js"></script>
+  {% else %}
+  <script src="/assets/scripts/navsim.min.js"></script>
+  {% endif %}

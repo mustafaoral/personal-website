@@ -1,0 +1,10 @@
+.movingMap__aircraft {
+    stroke: rgb(255,212,20);
+    stroke-linecap: butt;
+    stroke-width: 1;
+    cursor: pointer;
+}
+
+.movingMap__aircraft_hidden {
+    display: none;
+}

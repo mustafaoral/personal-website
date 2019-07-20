@@ -1,0 +1,24 @@
+{
+  "name": "colormemoss.com",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "set ELEVENTY_ENV=development&& npx gulp clean && eleventy --serve --watch",
+    "startDebug": "set ELEVENTY_ENV=development&& set DEBUG=Eleventy*&& npx gulp clean && eleventy --serve --watch",
+    "startStaging": "npx gulp && eleventy --serve -- watch",
+    "buildDev": "npx gulp clean && set ELEVENTY_ENV=development&& eleventy",
+    "buildStaging": "npx gulp && eleventy",
+    "buildProd": "set ELEVENTY_ENV=prod&& npx gulp && eleventy",
+    "buildNetlify": "npx gulp && ELEVENTY_ENV=prod eleventy",
+    "deployLocal": "del D:\\inetpub\\colormemoss\\* /Q /S && (for /d %x in (D:\\inetpub\\colormemoss\\*) do @rd /Q /S \"%x\") && xcopy .\\www D:\\inetpub\\colormemoss /S"
+  },
+  "author": "Mustafa Oral",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.3",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-terser": "^1.2.0",
+    "html-minifier": "^4.0.0"
+  }
+}

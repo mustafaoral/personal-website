@@ -1,0 +1,31 @@
+.instrumentHsi__digit {
+    width: 12px;
+    height: 22px;
+    top: 28px;
+    background-image: url('/assets/images/navsim/hsi/hsiDigits.png');
+    background-repeat: no-repeat;
+}
+
+.instrumentHsi__digit_crs1 {
+    left: 50px;
+}
+
+.instrumentHsi__digit_crs2 {
+    left: 62px;
+}
+
+.instrumentHsi__digit_crs3 {
+    left: 74px;
+}
+
+.instrumentHsi__digit_hdg1 {
+    right: 74px;
+}
+
+.instrumentHsi__digit_hdg2 {
+    right: 62px;
+}
+
+.instrumentHsi__digit_hdg3 {
+    right: 50px;
+}

@@ -1,0 +1,7 @@
+.instrumentRmiSelector {
+    transition: transform 0.15s linear;
+}
+
+    .instrumentRmiSelector * {
+        position: absolute;
+    }

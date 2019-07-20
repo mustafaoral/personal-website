@@ -1,0 +1,11 @@
+.aircraftCourseToNavaid__line_hidden {
+    display: none;
+}
+
+.aircraftCourseToNavaid__line_navaid1 {
+    stroke: #A68D11;
+}
+
+.aircraftCourseToNavaid__line_navaid2 {
+    stroke: #77B259;
+}

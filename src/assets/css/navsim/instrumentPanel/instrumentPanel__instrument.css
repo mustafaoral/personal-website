@@ -1,0 +1,21 @@
+.instrumentPanel__instrument {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+}
+
+.instrumentPanel__instrument_index_1 {
+    left: 240px;
+}
+
+.instrumentPanel__instrument_index_2 {
+    left: 480px;
+}
+
+.instrumentPanel__instrument_index_3 {
+    left: 720px;
+}
+
+.instrumentPanel__instrument_index_4 {
+    left: 960px;
+}

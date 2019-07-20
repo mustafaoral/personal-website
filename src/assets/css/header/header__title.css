@@ -1,0 +1,14 @@
+.header__title {
+    color: #349DAD;
+    margin: 0;
+    font-size: 250%;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    font-family: "PT Sans";
+}
+
+@media (min-width: 600px) {
+    .header__title {
+        padding: 0;
+    }
+}

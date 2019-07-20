@@ -1,0 +1,23 @@
+.instrumentRmi__navFlag {
+    transition: transform 0.2s;
+    transition-timing-function: linear;
+    width: 50px;
+    height: 100px;
+    top: 78px;
+}
+
+.instrumentRmi__navFlag_left {
+    left: 14px;
+    background: url('/assets/images/navsim/navFlags.png') 0 0 no-repeat;
+    transform: rotate(-30deg);
+}
+
+.instrumentRmi__navFlag_right {
+    right: 14px;
+    background: url('/assets/images/navsim/navFlags.png') -50px 0 no-repeat;
+    transform: rotate(30deg);
+}
+
+.instrumentRmi__navFlag_visible {
+    transform: rotate(0);
+}

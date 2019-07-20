@@ -1,0 +1,9 @@
+.informationDisplay {
+    font-family: 'Inconsolata';
+    text-align: center;
+    user-select: none;
+}
+
+    .informationDisplay > * {
+        display: none;
+    }

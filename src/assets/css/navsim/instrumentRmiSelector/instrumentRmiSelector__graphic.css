@@ -1,0 +1,12 @@
+.instrumentRmiSelector__graphic {
+    width: 60px;
+    height: 60px;
+}
+
+.instrumentRmiSelector__graphic_left {
+    background: url('/assets/images/navsim/rmi/rmiSelectorL.png') 0 0 no-repeat;
+}
+
+.instrumentRmiSelector__graphic_right {
+    background: url('/assets/images/navsim/rmi/rmiSelectorR.png') 0 0 no-repeat;
+}

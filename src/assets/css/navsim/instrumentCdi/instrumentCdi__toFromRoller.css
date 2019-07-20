@@ -1,0 +1,17 @@
+.instrumentCdi__toFromRoller {
+    width: 16px;
+    height: 48px;
+    top: -16px;
+    left: 0;
+    background: url('/assets/images/navsim/cdi/cdiToFrom.png') 0 0 no-repeat;
+    transition: top 0.2s;
+    transition-timing-function: linear;
+}
+
+.instrumentCdi__toFromRoller_to {
+    top: -32px;
+}
+
+.instrumentCdi__toFromRoller_from {
+    top: 0;
+}

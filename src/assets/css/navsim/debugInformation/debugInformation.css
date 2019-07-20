@@ -1,0 +1,6 @@
+.debugInformation {
+    display: none;
+    font-family: Inconsolata,monospace;
+    color: #AAA;
+    user-select: none;
+}

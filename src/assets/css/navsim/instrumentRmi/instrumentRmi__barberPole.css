@@ -1,0 +1,20 @@
+.instrumentRmi__barberPole {
+    width: 60px;
+    height: 16px;
+    top: -10px;
+    background: url('/assets/images/navsim/rmi/rmiBarberPole.png') 0 0 no-repeat;
+    transition: top 0.2s;
+    transition-timing-function: linear;
+}
+
+.instrumentRmi__barberPole_left {
+    left: 46px;
+}
+
+.instrumentRmi__barberPole_right {
+    right: 46px;
+}
+
+.instrumentRmi__barberPole_visible {
+    top: 14px;
+}

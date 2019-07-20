@@ -1,0 +1,12 @@
+.page {
+    font: 400 12pt "PT Serif", Sans-Serif;
+    height: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #DEDEDE;
+    background-color: #25303e;
+}
+
+.page_mode_navsim {
+    max-width: 1200px;
+}

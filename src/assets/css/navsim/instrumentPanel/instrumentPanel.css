@@ -1,0 +1,7 @@
+.instrumentPanel {
+    position: relative;
+    width: 1200px;
+    height: 240px;
+    bottom: 0;
+    background-color: #666;
+}
