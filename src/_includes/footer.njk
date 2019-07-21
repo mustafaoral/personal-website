@@ -1,4 +1,9 @@
 <footer class="page__footer footer">
   <span class="footer__text">Copyright &copy; Mustafa Oral.</span>
   <span class="footer__text">All rights reserved.</span>
+  <div class="footer__buildInfo">
+    Built with <a href="https://www.11ty.io/">Eleventy</a>
+    from <a href="{{ buildConfig.bitbucketLink }}"><span class="footer__buildCommit">{{ buildConfig.branch }}/{{ buildConfig.shortSha }}</span></a>
+    at <span class="footer__buildDateTime">{{ buildConfig.buildTime }}</span>.
+  </div>
 </footer>
