@@ -17,19 +17,10 @@ function Asi(wrapper) {
 
     if (aircraftSensorData.airspeed < 40) {
       needleAngle = aircraftSensorData.airspeed;
-    }
-    else {
+    } else {
       needleAngle = 40 + (aircraftSensorData.airspeed - 40) * 2;
     }
 
     setElementRotation(_needleElement, needleAngle);
   };
-
-  wrapper.querySelectorAll(".screw").forEach(screwElement => {
-    let randomAngle = Math.floor(Math.random() * 360);
-
-    screwElement.querySelectorAll(".screw__slot").forEach((slotElement, i) => {
-      setElementRotation(slotElement, randomAngle + i * 90);
-    });
-  });
 }

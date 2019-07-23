@@ -1,20 +1,20 @@
 .screw {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 .screw_position_topLeft {
-    transform: translate(25px, 25px);
+    transform: translate(30px, 30px);
 }
 
 .screw_position_topRight {
-    transform: translate(185px, 25px);
+    transform: translate(190px, 30px);
 }
 
 .screw_position_bottomRight {
-    transform: translate(185px, 185px);
+    transform: translate(190px, 190px);
 }
 
 .screw_position_bottomLeft {
-    transform: translate(25px, 185px);
+    transform: translate(30px, 190px);
 }

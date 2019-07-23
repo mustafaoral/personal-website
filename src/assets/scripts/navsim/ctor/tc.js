@@ -15,12 +15,4 @@ function Tc(wrapper) {
 
     setElementRotation(_aircraftElement, aircraftSensorData.turnRate * 10);
   };
-
-  wrapper.querySelectorAll(".screw").forEach(screwElement => {
-    let randomAngle = Math.floor(Math.random() * 360);
-
-    screwElement.querySelectorAll(".screw__slot").forEach((slotElement, i) => {
-      setElementRotation(slotElement, randomAngle + i * 90);
-    });
-  });
 }

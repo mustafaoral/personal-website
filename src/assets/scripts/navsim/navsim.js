@@ -494,11 +494,24 @@
     document.addEventListener("mouseup", documentMouseUpHandler);
   }
 
+  function createScrews(instrumentWrapper, positions){
+    const markup = positions.map(x => `<svg class="screw screw_position_${x}"><g class="screw__circle"><circle cx="10" cy="10" r="8"></circle></g><g class="screw__slots" style="transform: rotate(${Math.floor(Math.random() * 360)}deg)"><rect x="5" y="9" width="10" height="2"></rect><rect x="9" y="5" width="2" height="10"></rect></g></svg>`);
+
+    const screwsElement = document.createElement("div");
+    screwsElement.innerHTML = markup.join("");
+  
+    instrumentWrapper.prepend(screwsElement);
+  }
+
   function initElements() {
-    asi = new Asi(document.querySelector(".instrumentAsi"));
-    turnCoordinator = new Tc(document.querySelector(".instrumentTc"));
+    const asiWrapper = document.querySelector(".instrumentAsi"),
+      tcWrapper = document.querySelector(".instrumentTc"),
+      cdiWrapper = document.querySelector(".instrumentCdi");
+
+    asi = new Asi(asiWrapper);
+    turnCoordinator = new Tc(tcWrapper);
     hsi = new Hsi(document.querySelector(".instrumentHsi"));
-    cdi = new Cdi(document.querySelector(".instrumentCdi"));
+    cdi = new Cdi(cdiWrapper);
     rmi = new Rmi(document.querySelector(".instrumentRmi"));
     debugInformation = new DebugInformation();
     movingMap = document.querySelector(".movingMap");
@@ -526,6 +539,10 @@
     aircraftCourseToNavaid1 = document.querySelector(".aircraftCourseToNavaid__line_navaid1");
     aircraftCourseToNavaid2 = document.querySelector(".aircraftCourseToNavaid__line_navaid2");
     aircraftCourseToNavaidElements = [aircraftCourseToNavaid1, aircraftCourseToNavaid2];
+
+    createScrews(asiWrapper, ["topLeft", "topRight", "bottomRight", "bottomLeft"]);
+    createScrews(tcWrapper, ["topLeft", "topRight", "bottomRight", "bottomLeft"]);
+    createScrews(cdiWrapper, ["topLeft", "topRight", "bottomLeft"]);
 
     hsi.registerObsHandleEventCallback(event => {
       hsiCourse = event;

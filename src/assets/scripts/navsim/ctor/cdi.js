@@ -179,13 +179,5 @@ function Cdi(wrapper) {
     _obsHandleEventCallback = callback;
   };
 
-  wrapper.querySelectorAll(".screw").forEach(screwElement => {
-    let randomAngle = Math.floor(Math.random() * 360);
-
-    screwElement.querySelectorAll(".screw__slot").forEach((slotElement, i) => {
-      setElementRotation(slotElement, randomAngle + i * 90);
-    });
-  });
-
   setElementRotation(_knobElement, _knobAngle);
 }
