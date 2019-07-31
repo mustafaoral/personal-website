@@ -90,14 +90,14 @@ function Rmi(wrapper) {
   setElementRotation(_selectorLeftElement, _selectorValueL * -90);
   setElementRotation(_selectorRightElement, _selectorValueR * 90);
 
-  _selectorLeftHandleElement.addEventListener("click", _ => {
+  _selectorLeftHandleElement.addEventListener("mousedown", _ => {
     _selectorValueL += 1;
     _selectorValueL %= 2;
 
     setElementRotation(_selectorLeftElement, _selectorValueL * -90);
   });
 
-  _selectorRightHandleElement.addEventListener("click", _ => {
+  _selectorRightHandleElement.addEventListener("mousedown", _ => {
     _selectorValueR += 1;
     _selectorValueR %= 2;
 
