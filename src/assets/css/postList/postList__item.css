@@ -1,0 +1,7 @@
+.postList__item {
+    margin-top: 1.5em;
+}
+
+.postList__item:first-child {
+    margin-top: 0;
+}

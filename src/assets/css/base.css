@@ -3,6 +3,13 @@ a {
     color: #DEB900;
 }
 
-    a:visited {
-        color: #DEB900;
-    }
+a:visited {
+    color: #DEB900;
+}
+
+code:not([class]) {
+    font-family: Inconsolata, monospace;
+    font-size: 10pt;
+    padding: 0.3em 0.4em;
+    background-color: rgba(0, 0, 0, 0.2);
+}

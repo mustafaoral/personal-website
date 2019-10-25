@@ -1,4 +1,6 @@
 const htmlMinifier = require("html-minifier");
+const filters = require("./src/_filters/filters.js");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 function configurePassThroughCopy(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/images");
@@ -23,10 +25,34 @@ function configureTransform(eleventyConfig) {
   });
 }
 
+function configureFilters(eleventyConfig) {
+  Object.keys(filters).forEach(x => {
+    eleventyConfig.addFilter(x, filters[x])
+  });
+}
+
+function configureCollections(eleventyConfig) {
+  eleventyConfig.addCollection("posts", function (collection) {
+    return collection.getFilteredByGlob("src/posts/*.md").reverse();
+  });
+}
+
+function configurePlugins(eleventyConfig) {
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    templateFormats: ["njk", "md"]
+  });
+}
+
 module.exports = function (eleventyConfig) {
   configurePassThroughCopy(eleventyConfig);
 
   configureTransform(eleventyConfig);
+
+  configureFilters(eleventyConfig);
+
+  configureCollections(eleventyConfig);
+
+  configurePlugins(eleventyConfig);
 
   return {
     dir: {
@@ -35,7 +61,7 @@ module.exports = function (eleventyConfig) {
       includes: "_includes",
       data: "_data"
     },
-    templateFormats: ["njk", "html"],
+    templateFormats: ["njk", "html", "md"],
     htmlTemplateEngine: "njk"
   }
 };

@@ -1,0 +1,4 @@
+{
+    "layout": "default.njk",
+    "permalink": "posts/{{ page.date | date: '%Y/%m/%d' }}/{{ page.fileSlug }}/index.html"
+}
