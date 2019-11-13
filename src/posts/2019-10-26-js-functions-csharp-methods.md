@@ -1,5 +1,5 @@
 ---
-title: Passing JavaScript functions as parameters &mdash; and the C# equivalent
+title: "Passing JavaScript functions as parameters &mdash; and the C# equivalent"
 date: 2019-10-26
 ---
 
