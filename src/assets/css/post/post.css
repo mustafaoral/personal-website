@@ -1,0 +1,21 @@
+.post h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "PT Sans";
+}
+
+.post img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.post code:not([class]) {
+    font-family: Inconsolata, monospace;
+    font-size: .9em;
+    padding: 0.2em 0.3em;
+    background-color: rgba(0, 0, 0, 0.2);
+}

@@ -2,15 +2,13 @@
 
 {% block main %}
 <article class="article">
-  {% block title %}
   <h2 class="article__title">
     {% if articleTitle %}
     {{ articleTitle | safe }}
     {% else %}
     {{ title | safe }}
     {% endif %}
-    </h2>
-  {% endblock %}
+  </h2>
 
   {{ content | safe }}
 </article>

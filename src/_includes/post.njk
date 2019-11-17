@@ -1,0 +1,9 @@
+{% extends "layout.njk" %}
+
+{% block main %}
+<div class="post">
+  <h2>{{ title | safe }}</h2>
+  {{ content | safe }}
+</div>
+
+{% endblock %}

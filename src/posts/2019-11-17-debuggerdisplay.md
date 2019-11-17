@@ -43,7 +43,7 @@ Of course, the attribute doesn't just work in the debugger window, but also in t
 
 At its most basic, `DebuggerDisplay` usage is as follows (don't mind the anemic models, they're just here for illustration):
 
-``` cs
+``` csharp
 [DebuggerDisplay("{DebuggerDisplayValue,nq}")]
 public class Flight
 {
@@ -66,7 +66,7 @@ See [Jared Parson's post](https://blogs.msdn.microsoft.com/jaredpar/2011/03/18/d
 
 I don't want these attributes or the added property polluting Release builds, so I add a preprocessor directive to make sure they are not baked into the assemblies for Release builds. The downside is that this makes the class look a bit busy. I used to not mind it but I've recently started experimenting with converting the class to a partial one and putting `DebuggerDisplay` related stuff in a separate file.
 
-``` cs
+``` csharp
 public partial class Flight
 {
     public FlightNumber FlightNumber { get; set; }
@@ -75,7 +75,7 @@ public partial class Flight
 }
 ```
 
-``` cs
+``` csharp
 #if DEBUG
     [DebuggerDisplay("{DebuggerDisplayValue,nq}")]
     public partial class Flight
