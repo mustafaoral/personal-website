@@ -25,7 +25,7 @@ function DebugInformation() {
     }
 
     setElementText(aircraftPositionX, aircraftSensorData.x, 1);
-    setElementText(aircraftPositionY, aircraftSensorData.x, 1);
+    setElementText(aircraftPositionY, aircraftSensorData.y, 1);
     setElementText(aircraftAirspeed, aircraftSensorData.airspeed, 1);
     setElementText(aircraftHeading, aircraftSensorData.heading, 1);
     setElementText(aircraftTurnRate, aircraftSensorData.turnRate, 1);
