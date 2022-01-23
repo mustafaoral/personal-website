@@ -1,0 +1,193 @@
+---
+layout: default.njk
+title: NavSim 6000
+permalink: /projects/navsim/
+---
+
+<section class="article__section section">
+  <p>
+    <img class="section__image" src="/assets/images/navsim/navsim-preview.png" alt="Navsim 6000 screenshot" />
+  </p>
+
+  <h3 class="section__title">tl;dr</h3>
+
+  <p>
+    Here are the keys (extended description below):
+  </p>
+
+  <table class="section__table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Function</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Up</td>
+        <td>Accelerate</td>
+      </tr>
+      <tr>
+        <td>Down</td>
+        <td>Decelerate</td>
+      </tr>
+      <tr>
+        <td>Left</td>
+        <td>Turn left</td>
+      </tr>
+      <tr>
+        <td>Right</td>
+        <td>Turn right</td>
+      </tr>
+      <tr>
+        <td>Space</td>
+        <td>Stop turning</td>
+      </tr>
+      <tr>
+        <td>Mouse Wheel</td>
+        <td>Use with HSI and CDI knobs</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    <a href="/projects/navsim/demo">Demo</a>
+  </p>
+</section>
+
+<section class="article__section section">
+  <h3 class="section__title">A Little Background</h3>
+
+  <p>
+    I originally wrote Navsim 6000 in the spring of 2012, with the bulk being completed over a four day bank holiday weekend.
+  </p>
+
+  <p>
+    The inspiration for it was Tim Carlson's &quot;Tim's Air Navigation Simulator&quot; (as of 2019-06-28 available <a href="http://www.pilotfriend.com/training/flight_training/nav/vorzip/index.html">here</a>, though it requires Java). I must have come accross it around 1999-2000, when I was getting interested in aviation seriously. I thought to myself that it would be a nice challenge to update Tim's version and free it from proprietary technologies.
+  </p>
+
+  <p>
+    Much like how the original was a means for Tim to learn Java, I wrote it primarily to learn about the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas">canvas element</a>. Along the way, I learned a few new things about JavaScript, and a bit of CSS3 as well. Creating the graphics for the instruments led to the discovery of some new techniques in Photoshop too, which was a nice bonus.
+  </p>
+
+  <p>
+    While canvas worked well originally, this version replaces all usages of it with svg. jQuery is replaced with vanilla JavaScript.
+  </p>
+
+  <p>
+    I called it NavSim 6000 as an homage to <a href="https://en.wikipedia.org/wiki/Dilbert_(TV_series)">Gruntmaster 9000</a> and <a href="https://en.wikipedia.org/wiki/The_Adventures_of_Pete_%26_Pete">various KrebStar products</a>.
+  </p>
+</section>
+
+<section class="article__section section">
+  <h3 class="section__title">Primary Keys</h3>
+
+  <table class="section__table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Function</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Up</td>
+        <td>Accelerate</td>
+      </tr>
+      <tr>
+        <td>Down</td>
+        <td>Decelerate</td>
+      </tr>
+      <tr>
+        <td>Left</td>
+        <td>Turn left</td>
+      </tr>
+      <tr>
+        <td>Right</td>
+        <td>Turn right</td>
+      </tr>
+      <tr>
+        <td>Space</td>
+        <td>Stop turning</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>CTRL key makes turns snap to standard turns. If you use it to change the turn rate, the turn rate will stop at 3 degrees per second, while both increasing and decresing.</p>
+</section>
+
+<section class="article__section section">
+  <h3 class="section__title">Other Controls</h3>
+
+  <table class="section__table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Function</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mouse Wheel</td>
+        <td>Use with HSI and CDI knobs</td>
+      </tr>
+      <tr>
+        <td>CTRL</td>
+        <td>Snap turns. Use together with Left or Right.</td>
+      </tr>
+      <tr>
+        <td>SHIFT</td>
+        <td>Use with mouse wheel to change the value by 10 instead of 1</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Cycle navaid 1 type (VOR, VORDME, NDB)</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Cycle navaid 2 type (VOR, VORDME, NDB)</td>
+      </tr>
+      <tr>
+        <td>O</td>
+        <td>Draw navaid radials for omnidirectional navaids (VOR or VORDME), as well as track from aircraft to the navaids</td>
+      </tr>
+      <tr>
+        <td>T</td>
+        <td>Show/hide trace</td>
+      </tr>
+      <tr>
+        <td>W</td>
+        <td>Wind mode: use to set and clear the wind</td>
+      </tr>
+      <tr>
+        <td>H</td>
+        <td>Cycle what is hidden: aircraft, navaids, both</td>
+      </tr>
+      <tr>
+        <td>L</td>
+        <td>Lost: position the aircraft at a random point. Makes more sense if you're hiding at least the aircraft.</td>
+      </tr>
+      <tr>
+        <td>R</td>
+        <td>Change simulation rate</td>
+      </tr>
+      <tr>
+        <td>P</td>
+        <td>Pause/Unpause</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>Show debug information</td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+
+<section class="article__section section">
+  <h3 class="section__title">Enough, let me play!</h3>
+
+  <p>
+    <a href="/projects/navsim/demo">NavSim 6000</a>
+  </p>
+</section>
