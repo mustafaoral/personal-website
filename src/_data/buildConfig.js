@@ -10,7 +10,7 @@ function getFileContent(path) {
 function getBuildConfig() {
   let branch, sha;
 
-  if (process.env.ELEVENTY_ENV === "prod") {
+  if (process.env.ELEVENTY_ENV === "netlify") {
     // On netlify, there's no branch information in HEAD: it looks like the working copy is from a detached head. Retrieve branch from FETCH_HEAD, which looks like:
     // eeb9b6dcd8a0f053e590f59ed1bc53c46f144ef9       branch 'master' of bitbucket.org:drumex/cmm-web
     const match = getFileContent(path.join(pathToGitDirectory, "FETCH_HEAD")).match(/^([a-z0-9]+)\s+branch\s'([a-z0-9-]+)'\s.+/m);

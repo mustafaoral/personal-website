@@ -2,13 +2,16 @@
   "name": "colormemoss.com",
   "version": "1.0.0",
   "scripts": {
-    "start": "set ELEVENTY_ENV=development&& npx gulp clean && eleventy --serve --watch",
-    "startDebug": "set ELEVENTY_ENV=development&& set DEBUG=Eleventy*&& npx gulp clean && eleventy --serve --watch",
-    "startProd": "npx gulp && eleventy --serve -- watch",
-    "buildDev": "npx gulp clean && set ELEVENTY_ENV=development&& eleventy",
-    "buildProd": "set ELEVENTY_ENV=prod&& npx gulp && eleventy",
-    "buildNetlify": "npx gulp && ELEVENTY_ENV=prod eleventy",
-    "deployLocal": "del D:\\inetpub\\colormemoss\\* /Q /S && (for /d %x in (D:\\inetpub\\colormemoss\\*) do @rd /Q /S \"%x\") && xcopy .\\www D:\\inetpub\\colormemoss /S"
+    "start": "run-p start:dev:*",
+    "start:dev:eleventy": "set ELEVENTY_ENV=development&& npx gulp dev && npx @11ty/eleventy --serve --watch",
+    "start:dev:gulp": "npx gulp watch",
+    "start:debug": "run-p start:debug:*",
+    "start:debug:eleventy": "set ELEVENTY_ENV=development&& set DEBUG=Eleventy*&& npx gulp dev && npx @11ty/eleventy --serve --watch",
+    "start:debug:gulp": "npx gulp watch",
+    "start:prod": "npx gulp prod && npx @11ty/eleventy --serve -- watch",
+    "build:dev": "set ELEVENTY_ENV=development&& npx gulp dev && npx @11ty/eleventy",
+    "build:prod": "npx gulp prod && npx @11ty/eleventy",
+    "build:netlify": "npx gulp prod && ELEVENTY_ENV=netlify npx @11ty/eleventy"
   },
   "author": "Mustafa Oral",
   "devDependencies": {
@@ -20,6 +23,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-terser": "^2.1.0",
     "html-minifier": "^4.0.0",
-    "luxon": "^2.3.0"
+    "luxon": "^2.3.0",
+    "npm-run-all": "^4.1.5"
   }
 }

@@ -6,8 +6,8 @@ function configurePassThroughCopy(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/images");
 
   if (process.env.ELEVENTY_ENV === "development") {
-    eleventyConfig.addPassthroughCopy("src/assets/css");
-    eleventyConfig.addPassthroughCopy("src/assets/scripts");
+    eleventyConfig.addPassthroughCopy({ "src/assets/_dev/css": "assets/css" });
+    eleventyConfig.addPassthroughCopy({ "src/assets/_dev/scripts": "assets/scripts" });
   }
 }
 
@@ -53,6 +53,9 @@ module.exports = function (eleventyConfig) {
   configureCollections(eleventyConfig);
 
   configurePlugins(eleventyConfig);
+
+  eleventyConfig.setWatchThrottleWaitTime(100);
+  eleventyConfig.setUseGitIgnore(false);
 
   return {
     dir: {
