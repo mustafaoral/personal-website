@@ -1,5 +1,5 @@
 {
-  "name": "colormemoss.com",
+  "name": "mso.dev",
   "version": "1.0.0",
   "scripts": {
     "start": "run-p start:dev:*",
