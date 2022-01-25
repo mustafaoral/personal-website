@@ -29,7 +29,7 @@ function getBuildConfig() {
   return {
     branch: branch,
     shortSha: sha.substring(0, 7),
-    bitbucketLink: `https://bitbucket.org/drumex/cmm-web/commits/${sha}`,
+    bitbucketLink: `https://github.com/mustafaoral/personal-website/commit/${sha}`,
     buildTime: new Date().toISOString()
   };
 }
