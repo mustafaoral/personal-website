@@ -29,7 +29,7 @@ function getBuildConfig() {
   return {
     branch: branch,
     shortSha: sha.substring(0, 7),
-    bitbucketLink: `https://github.com/mustafaoral/personal-website/commit/${sha}`
+    linkToCommit: `https://github.com/mustafaoral/personal-website/commit/${sha}`
   };
 }
 
