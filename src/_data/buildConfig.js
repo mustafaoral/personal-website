@@ -12,11 +12,11 @@ function getBuildConfig() {
 
   if (process.env.ELEVENTY_ENV === "netlify") {
     // On netlify, there's no branch information in HEAD: it looks like the working copy is from a detached head. Retrieve branch from FETCH_HEAD, which looks like:
-    // eeb9b6dcd8a0f053e590f59ed1bc53c46f144ef9       branch 'master' of bitbucket.org:drumex/cmm-web
-    const match = getFileContent(path.join(pathToGitDirectory, "FETCH_HEAD")).match(/^([a-z0-9]+)\s+branch\s'([a-z0-9-]+)'\s.+/m);
+    // eeb9b6dcd8a0f053e590f59ed1bc53c46f144ef9       branch 'master' of ...
+    const match = getFileContent(path.join(pathToGitDirectory, "FETCH_HEAD")).match(/^(?<sha>[a-z0-9]+)\s+branch\s'(?<branch>[a-z0-9-]+)'\s.+/m);
 
-    sha = match[1].trim();
-    branch = match[2].trim();
+    sha = match.groups["sha"].trim();
+    branch = match.groups["branch"].trim();
   } else {
     // During dev, HEAD should point to a branch most of the time. The content looks like:
     // ref: refs/heads/master
