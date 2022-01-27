@@ -1,5 +1,10 @@
 .page__header {
     max-width: 1200px;
     margin-bottom: 15px;
-    border-bottom: 5px solid #378A49;
+    border-bottom: 5px solid var(--colour-green);
+}
+
+.page_mode_photography .page__header
+{
+    border-bottom: 5px solid var(--colour-green-desaturated);
 }

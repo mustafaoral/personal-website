@@ -1,0 +1,7 @@
+.photoCard
+{
+    background-color: hsl(0, 0%, 20%);
+    margin-bottom: 1em;
+    box-shadow: 0 0 5px #111;
+    position: relative;
+}

@@ -1,3 +1,8 @@
 .page__footer {
-    border-top: 5px solid #378A49;
+    border-top: 5px solid var(--colour-green);
+}
+
+.page_mode_photography .page__footer
+{
+    border-top: 5px solid var(--colour-green-desaturated);
 }

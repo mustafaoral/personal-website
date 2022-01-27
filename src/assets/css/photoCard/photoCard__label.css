@@ -1,0 +1,13 @@
+.photoCard__label
+{
+    font-family: Inconsolata;
+    background-color: #444;
+    padding: 0.2em 0.3em;
+    display: inline-block;
+    margin: 0.2em 0.2em 0 0;
+}
+
+.photoCard__label_link
+{
+    color: #FFF;
+}

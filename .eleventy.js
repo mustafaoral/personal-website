@@ -2,6 +2,11 @@ const htmlMinifier = require("html-minifier");
 const filters = require("./src/_filters/filters.js");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
+const componentsDir = `./src/_includes/component`;
+const photoCard = require(`${componentsDir}/photography/photoCard.js`);
+const photoTags = require(`${componentsDir}/photography/photoTags.js`);
+const photoPicture = require(`${componentsDir}/photography/photoPicture.js`);
+
 function configurePassThroughCopy(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/images");
 
@@ -31,6 +36,12 @@ function configureFilters(eleventyConfig) {
   });
 }
 
+function configureShortcodes(eleventyConfig) {
+  eleventyConfig.addShortcode("photoCard", photoCard);
+  eleventyConfig.addShortcode("photoTags", photoTags);
+  eleventyConfig.addShortcode("photoPicture", photoPicture);
+}
+
 function configureCollections(eleventyConfig) {
   eleventyConfig.addCollection("posts", function (collection) {
     return collection.getFilteredByGlob("src/posts/*.md").reverse();
@@ -49,6 +60,8 @@ module.exports = function (eleventyConfig) {
   configureTransform(eleventyConfig);
 
   configureFilters(eleventyConfig);
+
+  configureShortcodes(eleventyConfig);
 
   configureCollections(eleventyConfig);
 

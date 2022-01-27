@@ -1,0 +1,5 @@
+.photoCard__image, .photoCard__image *
+{
+    width: 100%;
+    height: auto;
+}

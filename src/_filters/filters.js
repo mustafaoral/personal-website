@@ -12,8 +12,19 @@ function parseDate(x) {
   });
 }
 
+const photographyTagToUrlCompatibleSegmentMap = {
+  "black & white": "blackandwhite"
+};
+
 module.exports = {
   toIsoDate: function (x) {
     return parseDate(x).toFormat("yyyy-MM-dd");
+  },
+  photographyTagToUrlCompatibleSegment: function (x) {
+    if (Object.keys(photographyTagToUrlCompatibleSegmentMap).indexOf(x) === -1) {
+      return x;
+    }
+
+    return photographyTagToUrlCompatibleSegmentMap[x];
   }
 }

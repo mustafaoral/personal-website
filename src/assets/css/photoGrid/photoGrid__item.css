@@ -1,0 +1,7 @@
+.photoGrid__item {
+    margin-bottom: 0.5rem;
+    position: relative;
+    width: 100%;
+}
+
+.photoGrid__item img { width: 100%; height: auto; }

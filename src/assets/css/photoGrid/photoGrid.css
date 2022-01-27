@@ -1,0 +1,5 @@
+.photoGrid {
+    columns: 3 150px;
+    column-gap: 0.5em;
+    margin-bottom: 1em;
+}

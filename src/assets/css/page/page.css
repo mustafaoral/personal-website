@@ -3,10 +3,15 @@
     height: 100%;
     max-width: 800px;
     margin: 0 auto;
-    color: #DEDEDE;
-    background-color: #25303e;
+    color: var(--colour-text);
+    background-color: var(--colour-blue);
 }
 
 .page_mode_navsim {
     max-width: 1200px;
+}
+
+.page_mode_photography {
+    color: #888;
+    background-color: #222;
 }

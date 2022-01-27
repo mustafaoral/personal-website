@@ -1,0 +1,10 @@
+.photoGrid__details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.1em 0.2em;
+    background-color: #000;
+    color: #FFF;
+    font-family: Inconsolata;
+    font-size: 0.8em;
+}

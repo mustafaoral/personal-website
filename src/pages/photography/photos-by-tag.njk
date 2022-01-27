@@ -1,0 +1,26 @@
+---
+layout: post.njk
+additionalPageClass: page_mode_photography
+pagination:
+  data: photography.tags
+  size: 1
+  alias: tag
+permalink: photography/tag/{{ tag | photographyTagToUrlCompatibleSegment }}/
+eleventyComputed:
+  title: "Photography - {{ tag | title | safe }}"
+---
+
+<div class="photoGrid">
+{%- for photo in photography.photosByTag[tag] -%}
+  <div class="photoGrid__item">
+
+    {% if config.environment == "development" %}
+    <div class="photoGrid__details">
+      {{ photo.metadataThumbnail.webp[0].width }}x{{ photo.metadataThumbnail.webp[0].height }} {{ photo.metadataThumbnail.webp[0].size }}
+    </div>
+    {% endif %}
+
+    <a href ="/photography/photo/{{ photo.hash }}">{% photoPicture photo %}</a>
+  </div>
+{%- endfor -%}
+</div>

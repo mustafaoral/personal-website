@@ -1,0 +1,12 @@
+---
+layout: post.njk
+additionalPageClass: page_mode_photography
+pagination:
+  data: photography.photos
+  size: 1
+  alias: photo
+permalink: photography/photo/{{ photo.hash }}/
+title: "Photography"
+---
+
+{% photoCard photo %}

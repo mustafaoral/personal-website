@@ -1,15 +1,6 @@
 .header__nav {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     padding: 0.5em 0;
-    border-top: 1px dashed #4d6380;
     justify-items: center;
-}
-
-@media (min-width: 600px) {
-    .header__nav {
-        border-top: none;
-        grid-template-columns: repeat(4, auto);
-        grid-column-gap: 2em;
-    }
 }

@@ -1,8 +1,22 @@
+:root {
+    --colour-text: hsl(0, 0%, 87%);
+    --colour-blue: hsl(214, 25%, 19%);
+    --colour-yellow: hsl(50, 100%, 44%);
+    --colour-yellow-desaturated: hsl(50, 80%, 100%);
+    --colour-green: hsl(133, 43%, 38%);
+    --colour-green-desaturated: hsl(0, 0%, 40%);
+}
+
 a {
     text-decoration: none;
-    color: #DEB900;
+    color: var(--colour-yellow);
 }
 
 a:visited {
-    color: #DEB900;
+    color: var(--colour-yellow);
+}
+
+.page_mode_photography a,
+.page_mode_photography a:visited {
+    color: var(--colour-yellow-desaturated);
 }
