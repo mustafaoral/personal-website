@@ -16,7 +16,7 @@ module.exports = function (photo, wrapWithLink) {
   }).join("");
 
   const captureDetails = photo.captureDetails.map(x => {
-    return `<div>${photoLabel({ data: x.focalLength, suffix: "mm" })}${photoLabel({ data: x.exposure, suffix: "s" })}${photoLabel({ data: x.aperture, prefix: "f/" })}${photoLabel({ data: x.iso, prefix: "ISO " })}</div>`;
+    return `<div>${photoLabel({ data: x.focalLength, suffix: "mm" })}${photoLabel({ data: x.aperture, prefix: "f/" })}${photoLabel({ data: x.exposure, suffix: "s" })}${photoLabel({ data: x.iso, prefix: "ISO " })}</div>`;
   }).join("");
 
   return `
