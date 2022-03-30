@@ -463,7 +463,7 @@ async function transformImage(photo, widths, quality) {
     photoPath = new URL(photo.filename, process.env["blob_storage_container_photography"]).href;
   }
   else {
-    photoPath = path.join(process.env["personal_website_photography_dir"], photo.filename);
+    photoPath = path.join(process.env["moss_personal_website_photography_path"], photo.filename);
   }
 
   return await Image(photoPath, {

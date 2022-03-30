@@ -1,5 +1,5 @@
-if ((Test-Path -Path env:personal_website_deploy_dir) -eq $false) {
-    Write-Host "Environment variable personal_website_deploy_dir doesn't exist"
+if ((Test-Path -Path env:moss_personal_website_deploy_path) -eq $false) {
+    Write-Host "Environment variable 'moss_personal_website_deploy_path' doesn't exist"
 
     return
 }
@@ -10,7 +10,7 @@ if ((Test-Path -Path ".\\www") -eq $false) {
     return
 }
 
-$deployDir = (Get-Childitem env:personal_website_deploy_dir).Value
+$deployDir = (Get-Childitem env:moss_personal_website_deploy_path).Value
 
 if ((Test-Path -Path $deployDir) -eq $false) {
     Write-Host "$deployDir doesn't exist"
