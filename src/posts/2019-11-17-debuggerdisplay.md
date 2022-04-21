@@ -1,6 +1,5 @@
 ---
 title: "DebuggerDisplay: a well kept secret?"
-date: 2019-11-17
 ---
 
 I want to talk about `DebuggerDisplay`. This is an attribute that's been around since the early days of .NET Framework and makes debugging a lot easier. It provides the developer with a way to control how the target will be displayed in the debugger window.

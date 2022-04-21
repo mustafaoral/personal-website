@@ -1,6 +1,5 @@
 ---
 title: "Passing JavaScript functions as parameters &mdash; and the C# equivalent"
-date: 2019-10-26
 ---
 
 Recently, I was helping a collegue with some JavaScript frontend code. He had a method that accepted a callback, which was defined inline, something like:
