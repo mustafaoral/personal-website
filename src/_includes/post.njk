@@ -3,6 +3,7 @@
 {% block main %}
 <div class="post">
   <h2>{{ title | safe }}</h2>
+  <h4>Published {{ page.date | toIsoDate }}</h4>
   {{ content | safe }}
 </div>
 
