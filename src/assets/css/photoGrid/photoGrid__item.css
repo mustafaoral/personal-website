@@ -4,4 +4,8 @@
     width: 100%;
 }
 
-.photoGrid__item img { width: 100%; height: auto; }
+.photoGrid__item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
